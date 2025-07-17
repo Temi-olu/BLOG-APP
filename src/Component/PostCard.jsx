@@ -1,22 +1,17 @@
-import React from 'react'
 
-function PostCard({createdat, title, status,excerpt, Author, Tags}) {
+
+function PostCard({ img, createdat, title, status,excerpt, Author, Tags}) {
   return (
-    <div className='ml-4 '>
-      <table className=''>
-        <tr>
-      <td className=''>{title}</td>
-      <td className=''>{status}</td>
-      <td className=''></td>
-        <td>{excerpt}</td>
-        <td>{Author}</td>
-        <td>{Tags}</td>
-        <td>{createdat}</td>
-
-      </tr>
-      </table>
-
-    </div>
+    <div className=' '>  
+      <img src={img}></img>
+      <h1 className=''>{title} </h1>
+      <h1 className=''>{status}</h1>
+      <h1 className=''>        </h1>
+      <h1>{excerpt}            </h1>
+      <h1>{Author}             </h1>
+      <h1>{Tags}               </h1>
+      <h1>{createdat}          </h1> 
+      </div>
   )
 }
 

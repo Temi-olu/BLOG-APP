@@ -6,6 +6,7 @@ import Register from './Pages/Register'
 import NewPost from './Pages/NewPost'
 import EditPost from './Pages/EditPost'
 import Dashboard from './Pages/Dashboard'
+import Settings from './Pages/Settings'
 function App() {
   return (
     <div >
@@ -18,6 +19,7 @@ function App() {
    <Route path="/newpost" element={<NewPost/>}/>
  <Route path="/editpost" element={<EditPost/>}/>
  <Route path="/dashboard" element={<Dashboard/>}/>
+  <Route path="/settings" element={<Settings/>}/>
  </Routes>
  </BrowserRouter>
     </div>
