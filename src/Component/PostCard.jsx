@@ -1,14 +1,23 @@
 import React from 'react'
 
-function PostList({title, status}) {
+function PostCard({createdat, title, status,excerpt, Author, Tags}) {
   return (
-    <div>
-      <p>{title}</p>
-      <p>{status}</p>
-      <p>Edit|Delete</p>
+    <div className='ml-4 '>
+      <table className=''>
+        <tr>
+      <td className=''>{title}</td>
+      <td className=''>{status}</td>
+      <td className=''></td>
+        <td>{excerpt}</td>
+        <td>{Author}</td>
+        <td>{Tags}</td>
+        <td>{createdat}</td>
+
+      </tr>
+      </table>
 
     </div>
   )
 }
 
-export default PostList
+export default PostCard

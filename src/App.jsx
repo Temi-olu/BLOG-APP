@@ -5,6 +5,7 @@ import Login from './Pages/Login'
 import Register from './Pages/Register'
 import NewPost from './Pages/NewPost'
 import EditPost from './Pages/EditPost'
+import Dashboard from './Pages/Dashboard'
 function App() {
   return (
     <div >
@@ -16,6 +17,7 @@ function App() {
   <Route path="/login" element={<Login/>}/>
    <Route path="/newpost" element={<NewPost/>}/>
  <Route path="/editpost" element={<EditPost/>}/>
+ <Route path="/dashboard" element={<Dashboard/>}/>
  </Routes>
  </BrowserRouter>
     </div>
