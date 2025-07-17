@@ -7,20 +7,25 @@ import NewPost from './Pages/NewPost'
 import EditPost from './Pages/EditPost'
 import Dashboard from './Pages/Dashboard'
 import Settings from './Pages/Settings'
+import AuthProvider from './Context/AuthContext'
+import ProctectedRoutes from './Component/ProctectedRoutes'
 function App() {
   return (
     <div >
+
   <BrowserRouter>
+  <AuthProvider>
   <NavBar/>
- <Routes>
+  <Routes>
   <Route path='/' element={<Home/>}/>
   <Route path="/Register" element={<Register/>}/>
   <Route path="/login" element={<Login/>}/>
-   <Route path="/newpost" element={<NewPost/>}/>
+  <Route path="/newpost" element={<NewPost/>}/>
  <Route path="/editpost" element={<EditPost/>}/>
- <Route path="/dashboard" element={<Dashboard/>}/>
+ <Route path="/dashboard" element={ <ProctectedRoutes><Dashboard/> </ProctectedRoutes>}/>
   <Route path="/settings" element={<Settings/>}/>
  </Routes>
+ </AuthProvider>
  </BrowserRouter>
     </div>
   )
