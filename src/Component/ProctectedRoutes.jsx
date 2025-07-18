@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import {Authentication} from "../Context/AuthContext"
-import Login from "../Pages/Login"
+import Register from "../Pages/Register"
 
 function ProctectedRoutes({children}) {
     const {isAuthenticated, user} = useContext(Authentication)
@@ -8,7 +8,7 @@ function ProctectedRoutes({children}) {
  
     return (
     <div>
-    {isAuthenticated && user ? children : <Login/>}
+    {isAuthenticated && user ? children : <Register/>}
     </div>
   )
 }
