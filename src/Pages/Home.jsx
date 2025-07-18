@@ -8,8 +8,9 @@ function Home() {
       <Body />
       <div className=" ml-44   ">
         {article.map((items, index) => (
+          <div className="">
           <PostCard
-            im
+            
             key={index}
             img={items.img}
             title={items.title}
@@ -18,6 +19,7 @@ function Home() {
             Tags={items.tags}
             createdat={items.createdAt}
           />
+          </div>
         ))}
       </div>
     </div>

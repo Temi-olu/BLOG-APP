@@ -3,7 +3,7 @@ import Article from "../assets/Article.jpeg";
 import Register from "./Register";
 function Login() {
   return (
-    <div className="ml-44 h-screen">
+    <div className="ml-44 mt-6 ">
       <div className="rounded-md bg-blue-950  h-[500px] w-[1020px] ">
         <img className="rounded-l-md h-[500px] w-[510px]" src={Article}></img>
       </div>

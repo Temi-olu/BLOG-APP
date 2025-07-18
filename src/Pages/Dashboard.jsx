@@ -15,7 +15,10 @@ function Dashboard() {
          </tr>
     {article.map((items, index) => (
     <div className="flex">
-    <PostCard key={index} title={items.title} status={items.status === 'published' ? "bg-blue": "bg-green"} />
+    <PostCard key={index}
+     title={items.title} 
+     status={items.status} 
+     />
      <button>
      <Link to="/editpost">Edit|</Link>
      </button>

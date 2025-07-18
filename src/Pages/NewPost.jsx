@@ -1,25 +1,33 @@
-
 import { useState } from "react";
+// import { toast } from "react-toastify";
 
 function NewPost() {
-const [title, setTitle] = useState("");
-const [content, setContent] = useState("");
-const [tags, setTags] = useState("");
-const [category, setCategory] = useState();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [tags, setTags] = useState("");
+  const [category, setCategory] = useState();
+  const [posts, setPosts] = useState([]);
 
-function handleSubmit() {
-  const post = {
-       title: title,
-       content: content,
-       tags: tags,
-       category: category
-   } 
-   if(title === "" || content ==="" || tags ==="" || category === "" ){
-          alert("Fill all field before you post")
-   }else{
-   console.log(post);
-   }
-}
+  function handleSubmit() {
+    const post = {
+      title: title,
+      content: content,
+      tags: tags,
+      category: category,
+    };
+    if (title === "" || content === "" || tags === "" || category === "") {
+      alert("Fill all field before you post");
+    } else {
+      console.log(post);
+      //  FOR STORING THE POSTS AFTER SUBMITTION
+      setPosts([...posts, post]);
+      console.log(setPosts);
+      setTitle("");
+      setCategory("");
+      setContent("");
+      setTags("");
+    }
+  }
 
   return (
     <div>
@@ -32,7 +40,7 @@ function handleSubmit() {
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-             className=" mb-2 w-[400px] rounded-lg p-3 border"
+              className=" mb-2 w-[400px] rounded-lg p-3 border"
               type="text"
               placeholder="Enter your post title"
             ></input>
@@ -52,17 +60,20 @@ function handleSubmit() {
             />
             <label className="mb-2">Category</label>
             <select
-               value={category}
-               onChange={(e) => setCategory(e.target.value)}
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
               className="w-[400px]  rounded-lg p-3 border"
             >
-              <option>faith</option>
+              <option value={category}>faith</option>
               <option>dev</option>
             </select>
           </div>
         </form>
 
-        <button onClick={handleSubmit} className=" bg-blue-900 w-24 text-white p-2 rounded-full mt-3 relative  left-[900px]">
+        <button
+          onClick={handleSubmit}
+          className=" bg-blue-900 w-24 text-white p-2 rounded-full mt-3 relative  left-[900px]"
+        >
           Publish
         </button>
       </div>

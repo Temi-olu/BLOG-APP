@@ -2,7 +2,7 @@ import React from 'react'
 import background from "../assets/background.jpeg"
 function Body() {
   return (
-    <div className='ml-44'>
+    <div className='ml-44 mt-6'>
   <img src={background} className=' rounded-sm h-[450px] w-[1000px]'/>
     <div className='ml-14 relative bottom-75  text-white'>
      <h1 className='mb-5 font-extrabold font-serif text-5xl'>TechTales: Unveiling the Future of Technology</h1>
