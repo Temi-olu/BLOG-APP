@@ -6,18 +6,19 @@ function Home() {
   return (
     <div className="">
       <Body />
-      <div className=" ml-44   ">
+      <div className=" mt-4 items-center ">
+        <h1>Top articles</h1>
         {article.map((items, index) => (
-          <div className="">
+          <div className=" ">
           <PostCard
-            
             key={index}
             img={items.img}
+            imgClass=""
             title={items.title}
             excerpt={items.excerpt}
-            Author={items.author}
-            Tags={items.tags}
-            createdat={items.createdAt}
+            // Author={items.author}
+            // Tags={items.tags}
+            // createdat={items.createdAt}
           />
           </div>
         ))}

@@ -8,14 +8,14 @@ function NavBar() {
       <div className="">
         <ul className=" flex gap-10">
        <Link to='/'><l1>Home</l1></Link>
-          <l1>Article</l1>
+      <Link to='/article' >  <l1>Article</l1></Link> 
           <l1>About</l1>
         </ul>
       </div>
          <div className=" relative left-89 flex gap-4 items-center">
       <input type="text" placeholder="   Search"  className="bg-gray-200 rounded-sm h-8 px-2"/>
      {/* <IoIosSearch  className="relative right-52 top-2 items-center"/> */}
- <Link to='/newpost'>    <button className="bg-blue-700 text-white rounded-sm px-2 py-1">New Article</button></Link> 
+ <Link to='/newpost'> <button className="bg-blue-700 text-white rounded-sm px-2 py-1">New Article</button></Link> 
       <FaUserCircle  size={32}/>
       </div>
     </div>

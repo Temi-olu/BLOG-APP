@@ -34,6 +34,17 @@ const article = [
     status: "published",
     createdAt: "2025-07-01",
     author: "Temi"
+  },
+   {
+    id: 4,
+    img: page3,
+    title: "Deploying to Vercel",
+    content: "Here's a step-by-step guide to push your app live...",
+    excerpt: "Here's a step-by-step guide...",
+    tags: ["deploy", "vercel"],
+    status: "published",
+    createdAt: "2025-07-01",
+    author: "Temi"
   }
 ]
 export default article ;

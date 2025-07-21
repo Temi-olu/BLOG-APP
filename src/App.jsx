@@ -9,6 +9,7 @@ import Dashboard from './Pages/Dashboard'
 import Settings from './Pages/Settings'
 import AuthProvider from './Context/AuthContext'
 import ProctectedRoutes from './Component/ProctectedRoutes'
+import Article from './Pages/Article'
 function App() {
   return (
     <div >
@@ -24,6 +25,7 @@ function App() {
  <Route path="/editpost" element={<EditPost/>}/>
  <Route path="/dashboard" element={ <ProctectedRoutes><Dashboard/> </ProctectedRoutes>}/>
   <Route path="/settings" element={<Settings/>}/>
+  <Route path="/Article" element={<Article/>}/>
  </Routes>
  </AuthProvider>
  </BrowserRouter>
