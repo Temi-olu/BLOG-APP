@@ -17,7 +17,7 @@ const article = [
     id: 2,
     img: page1,
     title: "Why I Chose TailwindCSS",
-    content: "Let's talk about utility-first design and speed...",
+    content: "Let's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speedLet's talk about utility-first design and speed",
     excerpt: "Let's talk about utility-first design...",
     tags: ["tailwind", "css"],
     status: "draft",

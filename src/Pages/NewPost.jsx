@@ -1,6 +1,5 @@
 import { useState } from "react";
-// import { toast } from "react-toastify";
-
+import { toast } from "react-toastify";
 function NewPost() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -15,17 +14,19 @@ function NewPost() {
       tags: tags,
       category: category,
     };
-    if (title === "" || content === "" || tags === "" || category === "") {
-      alert("Fill all field before you post");
+    if (title === "" || content === "" || tags === "" ) {
+     toast.erorr("fill all fields");
+
     } else {
       console.log(post);
       //  FOR STORING THE POSTS AFTER SUBMITTION
       setPosts([...posts, post]);
-      console.log(setPosts);
+      console.log(post);
       setTitle("");
-      setCategory("");
       setContent("");
       setTags("");
+       toast.success("Account created successfully");
+
     }
   }
 

@@ -1,12 +1,14 @@
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import Article from "../assets/Article.jpeg";
 import Register from "./Register";
 import { useState } from "react";
+import {  toast } from 'react-toastify';
 function Login() {
-   const navigate = useNavigate
+
   const[email, setEmail]=useState('')
   const[password, setPassword]=useState('')
-  const[login, setLogin]=useState('')
+  const[login, setLogin]=useState([])
+  const [error, seterror]=useState(null)
 
 function handleSubmit(){
     
@@ -15,13 +17,15 @@ const Logins ={
   password: password,
 }
 if (email === "" || password==="") {
-  alert("fill it")
+  seterror(error)
+   toast.error("Please fill all fields");
 } else {
   setLogin([...login, Logins])
-   console.log(setLogin)
+   console.log(Logins)
    setEmail('')
    setPassword("")
-   navigate("/")
+   toast.success("created sucessfully")
+  
 }
 
 }
@@ -44,7 +48,8 @@ if (email === "" || password==="") {
           />
           <input
             className="rounded-full mb-6 w-88 p-4 bg-white "
-            placeholder="password"
+            placeholder=" Password"
+            type="password"
             value={password}
               onChange={(e)=> setPassword(e.target.value)}
           />

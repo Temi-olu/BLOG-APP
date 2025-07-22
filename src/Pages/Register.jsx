@@ -4,34 +4,32 @@ import { FcGoogle } from "react-icons/fc";
 import { FaLinkedin } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function Register() {
-const[name, setName]=useState('')
-const[email, setEmail]=useState('')
-const[password, setPassword]=useState('')
-const[posts, setPosts]=useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [posts, setPosts] = useState([]);
 
-function handleSubmit(e) {
-  e.prevenDefault
-  const register ={
-    name: name,
-    email: email,
-    password: password
+  function handleSubmit(e) {
+    e.preventDefault();
+    const register = {
+      name: name,
+      email: email,
+      password: password,
+    };
+    if (name === "" || email === "" || password === "") {
+      toast.error("Please fill all fields");
+    } else {
+      setPosts([...posts, register]);
+      console.log(register);
+      setName("");
+      setEmail("");
+      setPassword("");
+      toast.success("Account created successfully");
+    }
   }
-  if (name === ''|| email==="" || password ==="") {
-    alert("please fill the page")
-  }else{
-     setPosts([...posts, register])
-     console.log(setPosts)
-
-     setName (''),
-     setEmail ('')
-     setPassword( '')
-     alert("Created")
-
-  }
-
-}
 
   return (
     <div className="ml-44 mt-6">
@@ -77,17 +75,20 @@ function handleSubmit(e) {
             type="email"
             placeholder="Email"
             value={email}
-             onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             className=" rounded-lg mb-6 w-88 p-3 bg-gray-200"
             type="password"
             placeholder="*********"
             value={password}
-             onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button onClick={handleSubmit} className="rounded-full  w-[200px] text-white text-md font-serif bg-blue-950 p-2 ml-19">
+        <button
+          onClick={handleSubmit}
+          className="rounded-full  w-[200px] text-white text-md font-serif bg-blue-950 p-2 ml-19"
+        >
           Sign Up
         </button>
       </div>

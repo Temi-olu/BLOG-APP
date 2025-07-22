@@ -13,7 +13,7 @@ function NavBar() {
         </ul>
       </div>
          <div className=" relative left-89 flex gap-4 items-center">
-      <input type="text" placeholder="   Search"  className="bg-gray-200 rounded-sm h-8 px-2"/>
+      
      {/* <IoIosSearch  className="relative right-52 top-2 items-center"/> */}
  <Link to='/newpost'> <button className="bg-blue-700 text-white rounded-sm px-2 py-1">New Article</button></Link> 
       <FaUserCircle  size={32}/>
