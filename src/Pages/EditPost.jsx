@@ -2,20 +2,44 @@ import React, { useState } from 'react'
 import article from '../Data/article'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 
 
 function EditPost() {
-  const {id} = useParams()
+ const {id} = useParams(article)
  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [tags, setTags] = useState("");
-  const [category, setCategory] = useState();
+ const [content, setContent] = useState("");
+ const [tags, setTags] = useState("");
+ const [category, setCategory] = useState("");
+ const [edit, setedited] = useState("");
 
- useEffect(()=>{
+
+ function handleSubmit() {
+     const post = {
+       title: title,
+       content: content,
+       tags: tags,
+       category: category,
+     };
+     if (title === "" || content === "" || tags === "" ) {
+      toast.error("fill all fields");
+ 
+     } else {
+       console.log(post);
+       //  FOR STORING THE POSTS AFTER SUBMITTION
+       setedited([...edit, post]);
+       console.log(post);
+       setTitle("");
+       setContent("");
+       setTags("");
+        toast.success("Account created successfully");
+ 
+     }
+   }
+ useEffect(() => {
   const postToEdit = article.find(item => item.id === id);
    if (postToEdit) {
-      setTitle(postToEdit.title);
+    setTitle(postToEdit.title);
     setContent(postToEdit.content);
    }
 })
@@ -60,7 +84,7 @@ function EditPost() {
           </div>
         </form>
 
-        <button className=" bg-blue-900 w-24 text-white p-2 rounded-full mt-3 relative  left-[900px]">
+        <button onClick={handleSubmit} className=" bg-blue-900 w-24 text-white p-2 rounded-full mt-3 relative  left-[900px]">
           Edit
         </button>
       </div>

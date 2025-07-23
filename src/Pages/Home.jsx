@@ -16,9 +16,9 @@ function Home() {
             imgClass=""
             title={items.title}
             excerpt={items.excerpt}
-            // Author={items.author}
-            // Tags={items.tags}
-            // createdat={items.createdAt}
+            //  Author={items.author}
+            //  Tags={items.tags}
+            //  createdat={items.createdAt}
           />
           </div>
         ))}

@@ -15,7 +15,7 @@ function NewPost() {
       category: category,
     };
     if (title === "" || content === "" || tags === "" ) {
-     toast.erorr("fill all fields");
+     toast.error("fill all fields");
 
     } else {
       console.log(post);
