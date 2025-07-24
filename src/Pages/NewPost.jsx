@@ -70,6 +70,11 @@ function NewPost() {
             </select>
           </div>
         </form>
+        <button
+          className=" bg-gray-900 w-30 text-white p-2 rounded-full mt-3 relative  left-[890px]"
+        >
+          Save as Draft
+        </button>
 
         <button
           onClick={handleSubmit}

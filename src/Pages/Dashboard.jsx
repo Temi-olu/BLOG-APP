@@ -1,38 +1,41 @@
-import React from "react";
+
+import { useState } from "react";
 import article from "../Data/article";
-import PostCard from "../Component/PostCard";
-import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 function Dashboard() {
+  const[articles , setArticle]=useState(article)
+  function deletbtn(id) {
+    setArticle(articles.filter(item => item.id !== id));
+    toast.success('Successfullly deleted')
+  }
   return (
-    <div className="ml-54  ">
-      <h1>My Posts</h1>
-      <div className="border  ">
-        <table className=" divide-y w-[800px]">
-          <tr className="flex gap-64 p-2">
-            <th className="ml-16">Title</th>
-            <th className="">Status</th>
-            <th className="">Action</th>
-         </tr>
-       
-    {article.map((items, index) => (
-    <div className="">
-      <div className=" bg-amber-600">
-    <PostCard 
-     key={index}
-     title={items.title} 
-     status={items.status} 
-     />
-     </div>
-     <button>
-     <Link to="/editpost">Edit|</Link>
-     </button>
-      <button>Delete</button>
-            </div>
-          ))}
-       
+    <div className="ml-58">
+      <div className=" mt-17">
+        <table className="rounded-s w-[900px] divide-y p-4 divide-gray-200 border-1  border-gray-300 shadow-2xs rounded-3xl">
+          <tr className="flex mt-5 ">
+            <th className=" px-25 py-3">Title</th>
+            <th className=" px-29 py-3">Status</th>
+            <th className=" px-25 py-3">Action</th>
+          </tr>
+          <div className="">
+            {articles.map((items) => (
+              <tr
+                key={items.id}
+                className="divide-y w-full divide-gray-200" >
+                <td className="px-15 py-3">{items.title}</td>
+                <td className="px-10 py-3">{items.status}</td>
+                <td  className="px-29 ">Edit </td>
+                 <td onClick={() => deletbtn(items.id)} className="">Delete</td>
+              </tr>
+            ))}
+          </div>
+        
         </table>
       </div>
-    </div>
+
+     </div>
+
+
   );
 }
 
