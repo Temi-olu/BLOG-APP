@@ -7,8 +7,8 @@ function NavBar() {
       <h1 className="font-bold">TechTales</h1>
       <div className="">
         <ul className=" flex gap-10">
-       <Link to='/'><l1>Home</l1></Link>
-      <Link to='/article' >  <l1>Article</l1></Link> 
+       <Link to='/'><li>Home</li></Link>
+       <Link to='/article'> <l1>Article</l1></Link> 
           <l1>About</l1>
         </ul>
       </div>

@@ -28,9 +28,8 @@ function Home() {
         </select>
         </div>
         <div className=" relative left-[590px]">
-        {article.map((items, index) => (
-          <div className="mt-10 ">
-          <PostCard
+        {article.map((items, index) => 
+         <PostCard
             key={index}
             img={items.img}
             imgClass="w-[400px] rounded-lg"
@@ -40,8 +39,8 @@ function Home() {
             excerpt={items.excerpt}
           
           />
-          </div>
-        ))}
+      
+        ) }
         </div>
       </div>
     </div>
