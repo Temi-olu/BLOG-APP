@@ -15,7 +15,7 @@ import Article from './Pages/Article'
 import ArticleDetails from './Pages/ArticleDetails'
 function App() {
   return (
-    <div >
+    <div className='min-h-screen flex flex-col overflow-x-hidden' >
 
   <BrowserRouter>
   <AuthProvider>

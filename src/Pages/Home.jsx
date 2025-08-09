@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Body from "../Component/Body";
 import article from "../Data/article";
 import PostCard from "../Component/PostCard";
+import Footer from "../Component/Footer";
 function Home() {
+  const [search, setSearch]=useState()
+
+  // function filtered() {
+    
+  // }
+
   return (
-    <div className="h-screen">
+    <div className="">
       <Body />
       <div className=" ml-44 relative bottom-24 items-center ">
          <input type="text"
           placeholder="   Search" 
            className=" relative bottom-14  w-[1000px]   bg-gray-200 rounded-lg h-10 px-2"
-          // value={search}
-          // onChange={(e)=> setSearch(e.target.value)}
+          value={search}
+          onChange={(e)=> setSearch(e.target.value)}
          />
          <div className="relative bottom-8">
         <select className=" bg-gray-300 px-2 py-1 rounded-full" >
@@ -43,6 +50,7 @@ function Home() {
         ) }
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
