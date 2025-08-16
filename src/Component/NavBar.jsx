@@ -20,7 +20,7 @@ function NavBar() {
          />
      {/* <IoIosSearch  className="relative right-52 top-2 items-center"/> */}
     <Link to='/newpost'> <button className="bg-blue-700 text-white rounded-sm px-2 py-1">New Article</button></Link> 
-      <FaUserCircle  size={32}/>
+    <Link to="/AdminPanel" ><FaUserCircle  size={32}/></Link> 
       </div>
     </div>
   );

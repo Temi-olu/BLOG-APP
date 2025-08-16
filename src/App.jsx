@@ -13,9 +13,10 @@ import AuthProvider from './Context/AuthContext'
 import ProctectedRoutes from './Component/ProctectedRoutes'
 import Article from './Pages/Article'
 import ArticleDetails from './Pages/ArticleDetails'
+import AdminPanel from './Pages/AdminPanel';
 function App() {
   return (
-    <div className='min-h-screen flex flex-col overflow-x-hidden' >
+    <div className=' min-h-screen flex flex-col overflow-x-hidden' >
 
   <BrowserRouter>
   <AuthProvider>
@@ -30,6 +31,7 @@ function App() {
   <Route path="/settings" element={<Settings/>}/>
   <Route path="/Article" element={<Article/>}/>
    <Route path="/ArticleDetails" element={<ArticleDetails/>}/>
+ <Route path="/AdminPanel" element={<AdminPanel/>}/>
  </Routes>
  </AuthProvider>
  <ToastContainer  autoClose={1000} />

@@ -1,15 +1,26 @@
 import React, { useState } from 'react'
-import comment from '../Data/comment'
-import article from '../Data/article'
+// import comment from '../Data/comment'
+ import article from '../Data/article'
  import { FaUserCircle } from "react-icons/fa";
  function ArticleDetails() {
   const[commentbtn , setCommentbtn]=useState('')
+  // to save the comment array 
+  const[comment, setComment]= useState([])
 
-const filtered = comment.filter((item) => item.parentId === null)
+// const filtered = comment.filter((item) => item.parentId === null)
 
 
-const post = article.find((item)=> item.id ===2 )
- 
+ const post = article.find((item)=> item.id ===2 )
+ function handleOnClick (){
+    const newComment = {
+      id: Date.now(),         // unique id
+      parentId: null,         // top-level for now
+      text: commentbtn.trim() // the actual text
+    };
+     setComment([...comment, newComment]); // add to basket
+    setCommentbtn("")
+  }
+  
 
 return (
     <div className='ml-33 w-[1020px]'>
@@ -28,24 +39,19 @@ return (
       value={commentbtn}
        onChange={(e)=> setCommentbtn(e.target.value)}
       />
-    <button className=' text-white bg-blue-950 px-2 h-10 top-1  rounded-xl  relative right-34'>Post Comment</button>
+    <button onClick={handleOnClick} className=' text-white bg-blue-950 px-2 h-10 top-1  rounded-xl  relative right-34'>Post Comment</button>
   </div>
-      {filtered.map((item) => 
-          <div key={item.id}>
-             <h1>{item.author}</h1>
-             <h1>{item.createdAt}</h1>
-             <h1>{item.content}</h1>
-             <button>Reply</button>     
-        
-
-
-
-
-          </div>
-          
-    )} 
-    
-        <button className='bg-gray-200 rounded-xl font-bold p-2 mt-6 ml-6 '>Back to Articles</button>
+  {comment.map((item)=>
+     <div key={item.id}>
+      {item.text}
+      <div className='relative top-1 space-x-2 '>
+      <button onClick={replyOnClick}>Reply</button>
+      <button>Edit</button>
+      <button>Delete</button>
+      </div>
+  </div> )}
+   
+     <button className='bg-gray-200 rounded-xl font-bold p-2 mt-6 ml-6 '>Back to Articles</button>
         <button className='bg-gray-200 rounded-xl font-bold p-2 ml-4'>Edit Articles</button>
     </div>
   )

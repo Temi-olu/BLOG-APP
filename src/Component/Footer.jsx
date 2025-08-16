@@ -6,7 +6,17 @@ import { CgCopyright } from "react-icons/cg";
 function Footer() {
   return (
     <div className=''> 
-        <div className='bg-blue-950 text-gray-300 p-5'>
+        <div className='shadow-xl bg-white w-[800px] p-12 rounded-xl flex justify-center relative top-4  left-64'>
+          <h1 className='relative right-4 top-2 font-bold'>Subscribe to News Letter</h1>
+          <input type="e-mail"
+            placeholder='Enter your email'
+             className='border w-[500px] rounded-xl p-2'
+          />
+        </div>
+
+
+
+        <div className='bg-blue-950 text-gray-300 p-10'>
           <div className=''>
 <ul className='flex  justify-center gap-12'>
   <li>About Us</li>
